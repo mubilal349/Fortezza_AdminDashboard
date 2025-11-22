@@ -1,255 +1,115 @@
-# Campus Portal - Laravel Blade Layout Frontend
+Fortezza Admin Dashboard - Laravel Blade Layout Frontend
 
-Proyek ini adalah implementasi lengkap dari Campus Portal menggunakan Laravel dengan Blade Layout, Components, dan Vite untuk asset bundling modern.
+This project is a complete implementation of the Fortezza Admin Dashboard using Laravel with Blade Layout, Components, and Vite for modern asset bundling, focused on Shop Products and Gallery Products CRUD operations.
 
-## � Demo Screenshots
+🖼 Demo Screenshots
+Shop Products
+<img width="934" height="413" alt="image" src="https://github.com/user-attachments/assets/58ee288d-f0e8-4e40-b41c-8505e0dc57da" />
 
-### Light Mode
-![Home Page - Light Mode](screenshots/home-light.png)
-<p align="center"><i>Halaman Home dengan tampilan Light Mode - Navbar biru Undip, statistik, dan berita terbaru</i></p>
 
-![About Page - Light Mode](screenshots/about-light.png)
-<p align="center"><i>Halaman About dengan profil dosen dan informasi departemen</i></p>
+<p align="center"><i>Shop Products page displaying product list, add, edit, and delete functionality</i></p>
+Gallery Products
+<img width="928" height="402" alt="image" src="https://github.com/user-attachments/assets/9115e3f0-67e7-4842-80fb-d00e3b510fdf" />
 
-![Dashboard Page - Light Mode](screenshots/dashboard-light.png)
-<p align="center"><i>Halaman Dashboard dengan chart dan statistics cards</i></p>
 
-### Dark Mode
-![Home Page - Dark Mode](screenshots/home-dark.png)
-<p align="center"><i>Halaman Home dengan Dark Mode aktif - Smooth transition dan styling yang konsisten</i></p>
+<p align="center"><i>Gallery Products page showing gallery images, upload, edit, and delete functionality</i></p>
+📋 Key Features
+CRUD
 
-![About Page - Light Mode](screenshots/about-dark.png)
-<p align="center"><i>Halaman About dalam mode gelap dengan profil dosen dan informasi departemen</i></p>
+✅ Shop Products CRUD (Create, Read, Update, Delete)
+<img width="899" height="398" alt="image" src="https://github.com/user-attachments/assets/9fada7b1-921b-4174-bad0-60668aef924a" />
 
-![Dashboard Page - Dark Mode](screenshots/dashboard-dark.png)
-<p align="center"><i>Dashboard dalam mode gelap dengan chart dan gradient cards</i></p>
 
----
+✅ Gallery Products CRUD (Create, Read, Update, Delete)
+<img width="933" height="408" alt="image" src="https://github.com/user-attachments/assets/acdfd82d-ba57-41cf-95df-509f556df27d" />
 
-## �📋 Fitur Utama
 
-### Fitur Dasar
-- ✅ **Blade Layout** (@extends, @section, @yield)
-- ✅ **Blade Components** (x-navbar, x-card, x-footer, x-alert)
-- ✅ **Asset bundling** menggunakan Vite
-- ✅ **Tailwind CSS** untuk styling modern
-- ✅ **Responsive Design** dengan grid system
+✅ Image uploads:
 
-### Challenge Bonus (SEMUANYA SUDAH DIIMPLEMENTASI ✅)
-1. ✅ **Halaman About** - Menampilkan profil 4 dosen pengampu menggunakan `<x-card>`
-2. ✅ **Dark Mode Toggle** - Tombol di navbar dengan JavaScript untuk toggle tema gelap/terang
-3. ✅ **Halaman Dashboard** - Menampilkan grafik dummy (chart bar) tanpa library eksternal
-4. ✅ **Component Alert** - `<x-alert>` untuk menampilkan notifikasi dengan 4 tipe (info, success, warning, error)
-5. ✅ **Custom Theme Undip** - Warna biru Undip (#0047AB) sudah dikonfigurasi di `tailwind.config.js`
+Stored in the public/uploads folder
 
-## 📁 Struktur File
+Image paths saved in the database
 
-```
+✅ Responsive Design with Tailwind CSS
+
+Bonus
+
+✅ Dashboard screenshot
+<img width="1920" height="1695" alt="image" src="https://github.com/user-attachments/assets/5106606c-a624-4616-93ec-e7424b8d28af" />
+
+
+✅ Alert notifications for each CRUD action (success, error)
+
+✅ Optional dark mode toggle across all pages
+
+📁 File Structure
 resources/
 ├── views/
 │   ├── layouts/
-│   │   └── app.blade.php          # Layout utama
+│   │   └── app.blade.php          # Main layout
 │   ├── components/
-│   │   ├── navbar.blade.php       # Navbar dengan dark mode toggle
+│   │   ├── navbar.blade.php       # Navbar
 │   │   ├── footer.blade.php       # Footer
-│   │   ├── card.blade.php         # Card component (reusable)
-│   │   └── alert.blade.php        # Alert component (bonus)
+│   │   └── alert.blade.php        # Alert component
 │   └── pages/
-│       ├── home.blade.php         # Halaman utama
-│       ├── about.blade.php        # Halaman about (bonus)
-│       └── dashboard.blade.php    # Halaman dashboard dengan chart (bonus)
+│       ├── shop-products.blade.php    # Shop Products CRUD page
+│       └── gallery-products.blade.php # Gallery Products CRUD page
 ├── css/
 │   └── app.css                    # Tailwind CSS directives
 └── js/
-    └── app.js                     # JavaScript untuk dark mode toggle
+    └── app.js                     # JS for dark mode or CRUD interactions
 
 routes/
 └── web.php                        # Route definitions
 
-tailwind.config.js                 # Konfigurasi Tailwind dengan warna Undip
-postcss.config.js                  # Konfigurasi PostCSS
-vite.config.js                     # Konfigurasi Vite
-```
+tailwind.config.js                 # Tailwind CSS configuration
+vite.config.js                     # Vite configuration
 
-## 🚀 Cara Menjalankan
+🚀 How to Run
+Prerequisites
 
-### Persiapan
-Pastikan Anda sudah menginstall:
-- PHP 8.2+
-- Composer
-- Node.js & NPM
+Make sure you have installed:
 
-### Langkah-langkah
+PHP 8.2+
 
-1. **Install Dependencies**
-```bash
+Composer
+
+
+MySQL/MariaDB
+
+Steps
+
+Install Dependencies
+
 composer install
-npm install
-```
 
-2. **Setup Environment**
-```bash
+
+Setup Environment
+
 cp .env.example .env
 php artisan key:generate
-```
 
-3. **Jalankan Development Server**
 
-**Terminal 1 - Laravel Server:**
-```bash
+Run Development Servers
+
+Terminal 1 - Laravel Server:
+
 php artisan serve
-```
 
-**Terminal 2 - Vite Dev Server:**
-```bash
-npm run dev
-```
 
-4. **Buka Browser**
-```
+
+
+Open Browser
+
 http://127.0.0.1:8000
-```
 
-## 🎨 Fitur Dark Mode
-
-Dark mode dapat diaktifkan dengan:
-1. Klik tombol 🌙/☀️ di navbar
-2. Preferensi disimpan di localStorage
-3. Otomatis apply ke seluruh halaman dengan smooth transition
-
-## 📦 Components
-
-### 1. Navbar Component
-```blade
+📦 Components
+1. Navbar Component
 <x-navbar />
-```
-Fitur:
-- Logo CampusPortal
-- Menu navigasi (Home, About, Dashboard)
-- Dark mode toggle button
-- Warna tema Undip (#0047AB)
 
-### 2. Card Component
-```blade
-<x-card 
-    title="Judul Card" 
-    body="Deskripsi card..." 
-/>
-```
-Fitur:
-- Reusable
-- Hover effect
-- Dark mode support
 
-### 3. Footer Component
-```blade
-<x-footer />
-```
-Fitur:
-- Copyright information
-- Dark mode support
+Features:
 
-### 4. Alert Component (Bonus)
-```blade
-<x-alert 
-    type="success" 
-    message="Operasi berhasil!" 
-/>
-```
-Tipe tersedia: `info`, `success`, `warning`, `error`
+Navigation menu (Shop Products, Gallery Products)
 
-## 🎯 Halaman-halaman
-
-### 1. Home (`/`)
-- Welcome message
-- 3 card informatif (Akademik, Berita Kampus, Organisasi)
-- Layout responsive grid
-
-### 2. About (`/about`)
-- Informasi departemen
-- Profil 4 dosen pengampu
-- Visi dan Misi
-- Alert notification
-
-### 3. Dashboard (`/dashboard`)
-- 3 statistics cards dengan gradient
-- Chart bar IPK per tahun (CSS-based, tanpa library)
-- Jadwal kuliah
-- Pengumuman
-- Menggunakan warna custom Undip
-
-## 🎨 Tailwind Configuration
-
-Custom color sudah ditambahkan:
-```javascript
-colors: {
-  'undip-blue': '#0047AB',
-}
-```
-
-Gunakan di class:
-```html
-<div class="bg-undip-blue text-white">...</div>
-```
-
-## 📝 Tips Development
-
-1. **Live Reload**: Setiap perubahan di file `.blade.php` atau `.js` akan otomatis reload
-2. **Tailwind Classes**: Gunakan dokumentasi [tailwindcss.com/docs](https://tailwindcss.com/docs)
-3. **Dark Mode**: Tambahkan prefix `dark:` untuk styling mode gelap
-   ```html
-   <div class="bg-white dark:bg-gray-800">...</div>
-   ```
-
-## 🏆 Output Akhir
-
-✅ **Struktur folder lengkap** sesuai requirement
-✅ **Tampilan rapi dan responsif**
-✅ **Komponen reusable** dengan props
-✅ **CSS & JS bundling** dengan Vite berhasil
-✅ **SEMUA Challenge Bonus** sudah diimplementasi (+10%)
-
-## 📸 Preview
-
-### Light Mode
-- Navbar biru Undip (#0047AB)
-- Card dengan shadow dan hover effect
-- Footer gelap
-- Layout responsif
-
-### Dark Mode
-- Background gelap
-- Text terang
-- Smooth transition
-- Preferensi tersimpan
-
-## 🔧 Troubleshooting
-
-### Vite tidak running
-```bash
-npm install
-npm run dev
-```
-
-### Tailwind classes tidak work
-```bash
-npm run build
-php artisan optimize:clear
-```
-
-### Dark mode tidak save
-Pastikan browser support localStorage dan JavaScript enabled.
-
-## ‍💻 Dibuat oleh
-
-**Banar Pambudi**  
-Departemen Teknik Elektro  
-Universitas Diponegoro  
-2025
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/banarpambudi)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bnrpmbd)
-
----
-
-**Built with ❤️ using Laravel & Tailwind CSS**
+Dark mode toggle button
