@@ -6,11 +6,11 @@
     <title>Campus Portal</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+<body class="flex flex-col bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
     <x-navbar />
-    <main class="flex-grow container mx-auto py-20 px-4">
-        @yield('content')
-    </main>
+    <main class="flex-1 overflow-y-auto">
+    @yield('content')
+</main>
     <x-footer />
 </body>
 </html>
